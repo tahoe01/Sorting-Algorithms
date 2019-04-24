@@ -6,9 +6,9 @@
 #include <float.h>
 #include "bubble_sort.cpp"
 #include "insertion_sort.cpp"
-#include "spin-the-bottle-sort.cpp"
-#include "shell-sort.cpp"
-#include "annealing-sort.cpp"
+#include "spin_the_bottle_sort.cpp"
+#include "shell_sort.cpp"
+#include "annealing_sort.cpp"
 #include "random_generation_sample.cpp"
 
 using namespace std;
@@ -91,7 +91,7 @@ timing time_shell_sort(int n, int reps, const std::vector<int>& gaps)
 //     {
 //         rvec = get_random_shuffled_int_vector(n);
 //         double min_timing = DBL_MAX;
-//         for (int j = 0; j < 3; j++) { // For each input vector, do 3 runs and take the smallest timing.
+//         for (int j = 0; j < 1; j++) { // For each input vector, do 3 runs and take the smallest timing.
 //             clock_t c_start = clock();
 //             annealing_sort(rvec, temps, repetitions);
 //             clock_t c_end = clock();
@@ -131,28 +131,28 @@ int main()
 {
     timing t;
     const vector<int>& gaps1{1501, 701, 301, 132, 57, 23, 10, 4, 1};
-    const vector<int>& gaps2{1800, 900, 281, 77, 23, 8, 1};
+    const vector<int>& gaps2{1400, 900, 281, 77, 23, 8, 1};
     // const vector<int>& temps1;
     // const vector<int>& temps2;
     // const vector<int>& repetitions1;
     // const vector<int>& repetitions2;
 
     create_empty_timings_file("shell1.csv");
-    for(int n = 10; n <= 100000; n *= 10)
+    for(int n = 10; n <= 1000000; n *= 10)
     {
         t = time_shell_sort(n, 3, gaps1);
         add_timings_to_file("shell-sort(gaps1)", t, "shell1.csv");
     }
 
     create_empty_timings_file("shell2.csv");
-    for(int n = 10; n <= 100000; n *= 10)
+    for(int n = 10; n <= 1000000; n *= 10)
     {
         t = time_shell_sort(n, 3, gaps2);
         add_timings_to_file("shell-sort(gaps2)", t, "shell2.csv");
     }
 
     create_empty_timings_file("insertion.csv");
-    for(int n = 10; n <= 100000; n *= 10)
+    for(int n = 10; n <= 1000000; n *= 10)
     {
         t = time_sort(n, 3, insertion_sort);
         add_timings_to_file("insertion-sort", t, "insertion.csv");
@@ -165,12 +165,12 @@ int main()
         add_timings_to_file("bubble-sort", t, "bubble.csv");
     }
 
-    // create_empty_timings_file("spin.csv");
-    // for(int n = 10; n <= 10000; n *= 10)
-    // {
-    //     t = time_sort(n, 3, spin_the_bottle_sort);
-    //     add_timings_to_file("spin-the-bottle-sort", t, "spin.csv");
-    // }
+    create_empty_timings_file("spin.csv");
+    for(int n = 10; n <= 100000; n *= 10)
+    {
+        t = time_sort(n, 3, spin_the_bottle_sort);
+        add_timings_to_file("spin-the-bottle-sort", t, "spin.csv");
+    }
 
     // TODO:
     // create_empty_timings_file("annealing1.csv");

@@ -4,6 +4,7 @@
 #include <algorithm>
 #include <ctime>
 #include <float.h>
+#include <functional>
 #include "bubble_sort.cpp"
 #include "insertion_sort.cpp"
 #include "spin_the_bottle_sort.cpp"

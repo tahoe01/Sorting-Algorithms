@@ -59,4 +59,4 @@ def plot_timings_from_file(fname_list):
     #plt.savefig('sort.png')
     plt.close()
 
-plot_timings_from_file(["bubble.csv", "insertion.csv", "shell1.csv", "shell2.csv"]) # TODO: annealing1.csv, annealing2.csv
+plot_timings_from_file(["bubble.csv", "insertion.csv", "shell1.csv", "shell2.csv", "spin.csv"]) # TODO: annealing1.csv, annealing2.csv

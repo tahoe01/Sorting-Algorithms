@@ -27,7 +27,7 @@ vector<int> get_random_shuffled_int_vector(int n)
     for(int i = 0; i < n; i++)
         vec[i] = (i + 1);
     shuffle_vector(vec);
-    // almost_sorted_vector(vec); Use this line to generate almost sorted array
+    // almost_sorted_vector(vec); // Use this line to generate almost sorted array
     return vec;
 }
 
@@ -132,7 +132,7 @@ int main()
 {
     timing t;
     const vector<int>& gaps1{1501, 701, 301, 132, 57, 23, 10, 4, 1};
-    const vector<int>& gaps2{1400, 900, 281, 77, 23, 8, 1};
+    const vector<int>& gaps2{1200, 900, 281, 77, 23, 8, 1};
     // const vector<int>& temps1;
     // const vector<int>& temps2;
     // const vector<int>& repetitions1;
@@ -153,7 +153,7 @@ int main()
     }
 
     create_empty_timings_file("insertion.csv");
-    for(int n = 10; n <= 1000000; n *= 10)
+    for(int n = 10; n <= 100000; n *= 10)
     {
         t = time_sort(n, 3, insertion_sort);
         add_timings_to_file("insertion-sort", t, "insertion.csv");

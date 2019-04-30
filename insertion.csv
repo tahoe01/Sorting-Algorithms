@@ -1,6 +1,6 @@
 funcname,n,seconds
-insertion-sort,10,0
-insertion-sort,100,0
-insertion-sort,1000,0.00333333
-insertion-sort,10000,0.433333
-insertion-sort,100000,42.84
+insertion-sort,10,1.33333e-06
+insertion-sort,100,2.5e-05
+insertion-sort,1000,0.002316
+insertion-sort,10000,0.232469
+insertion-sort,100000,23.3116

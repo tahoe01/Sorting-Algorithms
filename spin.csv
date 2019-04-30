@@ -1,5 +1,5 @@
 funcname,n,seconds
-spin-the-bottle-sort,10,0
-spin-the-bottle-sort,100,0.00333333
-spin-the-bottle-sort,1000,0.416667
-spin-the-bottle-sort,10000,52.7433
+spin-the-bottle-sort,10,2.9e-05
+spin-the-bottle-sort,100,0.00218767
+spin-the-bottle-sort,1000,0.296131
+spin-the-bottle-sort,10000,33.6563

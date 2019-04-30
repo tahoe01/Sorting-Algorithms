@@ -1,7 +1,7 @@
 funcname,n,seconds
-shell-sort(gaps5),10,0
-shell-sort(gaps5),100,0
-shell-sort(gaps5),1000,0
-shell-sort(gaps5),10000,0.00333333
-shell-sort(gaps5),100000,0.266667
-shell-sort(gaps5),1000000,25.0933
+shell-sort(gaps5),10,6.66667e-07
+shell-sort(gaps5),100,3.33333e-07
+shell-sort(gaps5),1000,0.000101667
+shell-sort(gaps5),10000,0.002806
+shell-sort(gaps5),100000,0.147553
+shell-sort(gaps5),1000000,13.9912

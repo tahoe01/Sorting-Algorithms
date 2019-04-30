@@ -61,36 +61,3 @@ void almost_sorted_vector(vector<int>& nums)
 }
 
 # endif // RANDOM_GENERATION_SAMPLE_CPP
-
-
-// int main()
-// {
-//     mt19937 mt = get_mersenne_twister_generator_with_current_time_seed();
-
-//     print_mt_random_numbers(
-//         mt,
-//         10
-//     );
-
-
-//     cout << "\n";
-
-//     uniform_int_distribution<int> ui = get_uniform_int_generator(-4, 8);
-//     print_mt_bounded_numbers(mt, ui, 20);
-
-//     cout << "\n";
-//     for(int i = 0; i < 10; i++)
-//         cout << randint(mt, 0, 10) << "\n";
-
-//     cout << "\n";
-//     vector<int> nums = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
-//     for(int i = 0; i < 10; i++)
-//     {
-//         // shuffle_vector(nums);
-//         almost_sorted_vector(nums);
-//         for(int num : nums)
-//             cout << num << " ";
-//         cout << "\n";
-//     }
-//     return 0;
-// }

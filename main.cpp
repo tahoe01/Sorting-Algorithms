@@ -84,31 +84,31 @@ timing time_shell_sort(int n, int reps, const std::vector<int>& gaps)
     return t;
 }
 
-// timing time_annealing_sort(int n, int reps, const std::vector<int>& temps, const std::vector<int>& repetitions)
-// {
-//     double total_time = 0.0;
-//     vector<int> rvec;
-//     for(int i = 0; i < reps; i++)
-//     {
-//         rvec = get_random_shuffled_int_vector(n);
-//         double min_timing = DBL_MAX;
-//         for (int j = 0; j < 1; j++) { // For each input vector, do 3 runs and take the smallest timing.
-//             clock_t c_start = clock();
-//             annealing_sort(rvec, temps, repetitions);
-//             clock_t c_end = clock();
+timing time_annealing_sort(int n, int reps, const std::vector<int>& temps, const std::vector<int>& repetitions)
+{
+    double total_time = 0.0;
+    vector<int> rvec;
+    for(int i = 0; i < reps; i++)
+    {
+        rvec = get_random_shuffled_int_vector(n);
+        double min_timing = DBL_MAX;
+        for (int j = 0; j < 1; j++) { // For each input vector, do 3 runs and take the smallest timing.
+            clock_t c_start = clock();
+            annealing_sort(rvec, temps, repetitions);
+            clock_t c_end = clock();
 
-//             double curr_timing = (float)(c_end - c_start) / CLOCKS_PER_SEC;
-//             if (curr_timing < min_timing) {
-//                 min_timing = curr_timing;
-//             }
-//         }  
-//         total_time += min_timing;
-//     }
-//     timing t;
-//     t.n = n;
-//     t.seconds = (float)total_time/reps;
-//     return t;
-// }
+            double curr_timing = (float)(c_end - c_start) / CLOCKS_PER_SEC;
+            if (curr_timing < min_timing) {
+                min_timing = curr_timing;
+            }
+        }  
+        total_time += min_timing;
+    }
+    timing t;
+    t.n = n;
+    t.seconds = (float)total_time/reps;
+    return t;
+}
 
 // create/truncate a file with chosen filename. insert csv header "funcname,n,seconds"
 void create_empty_timings_file(string filename)
@@ -131,12 +131,24 @@ void add_timings_to_file(string funcname, timing t, string filename)
 int main()
 {
     timing t;
-    const vector<int>& gaps1{1501, 701, 301, 132, 57, 23, 10, 4, 1};
-    const vector<int>& gaps2{1200, 900, 281, 77, 23, 8, 1};
-    // const vector<int>& temps1;
-    // const vector<int>& temps2;
-    // const vector<int>& repetitions1;
-    // const vector<int>& repetitions2;
+    const vector<int>& gaps1{1601, 801, 300, 132, 57, 10, 1};
+    const vector<int>& gaps2{600, 280, 75, 25, 8, 1};
+    const vector<int>& gaps3{148, 99, 50, 1};
+    const vector<int>& gaps4{256, 128, 64, 32, 16, 8, 4, 2, 1};
+    const vector<int>& gaps5{200, 190, 180, 170, 160, 150};
+    const vector<int>& gaps6{887, 510, 377, 233, 144, 89, 55, 34, 21, 13, 8, 5, 3, 2, 2, 1};
+    const vector<int>& temps1{1600, 800, 400, 200, 100, 50, 25, 0};
+    const vector<int>& temps2{1000, 800, 600, 400, 200, 0};
+    const vector<int>& temps3{1024, 512, 216, 128, 64, 32, 16, 8, 4, 2, 1, 0};
+    const vector<int>& temps4{243, 81, 27, 9, 3, 0};
+    const vector<int>& temps5{256, 64, 16, 4, 0};
+    const vector<int>& temps6{1000, 850, 700, 550, 400, 250, 0};
+    const vector<int>& repetitions1{5, 5, 5, 5, 5, 5, 5, 0};
+    const vector<int>& repetitions2{2, 2, 2, 2, 2, 0};
+    const vector<int>& repetitions3{7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 0};
+    const vector<int>& repetitions4{2, 2, 2, 2, 2, 0};
+    const vector<int>& repetitions5{5, 5, 5, 5, 0};
+    const vector<int>& repetitions6{3, 3, 3, 3, 3, 3, 0};
 
     create_empty_timings_file("shell1.csv");
     for(int n = 10; n <= 1000000; n *= 10)
@@ -150,6 +162,76 @@ int main()
     {
         t = time_shell_sort(n, 3, gaps2);
         add_timings_to_file("shell-sort(gaps2)", t, "shell2.csv");
+    }
+
+    create_empty_timings_file("shell3.csv");
+    for(int n = 10; n <= 1000000; n *= 10)
+    {
+        t = time_shell_sort(n, 3, gaps3);
+        add_timings_to_file("shell-sort(gaps3)", t, "shell3.csv");
+    }
+
+    create_empty_timings_file("shell4.csv");
+    for(int n = 10; n <= 1000000; n *= 10)
+    {
+        t = time_shell_sort(n, 3, gaps4);
+        add_timings_to_file("shell-sort(gaps4)", t, "shell4.csv");
+    }
+
+    create_empty_timings_file("shell5.csv");
+    for(int n = 10; n <= 1000000; n *= 10)
+    {
+        t = time_shell_sort(n, 3, gaps5);
+        add_timings_to_file("shell-sort(gaps5)", t, "shell5.csv");
+    }
+
+    create_empty_timings_file("shell6.csv");
+    for(int n = 10; n <= 1000000; n *= 10)
+    {
+        t = time_shell_sort(n, 3, gaps6);
+        add_timings_to_file("shell-sort(gaps6)", t, "shell6.csv");
+    }
+
+    create_empty_timings_file("annealing1.csv");
+    for(int n = 10; n <= 1000000; n *= 10)
+    {
+        t = time_annealing_sort(n, 3, temps1, repetitions1);
+        add_timings_to_file("annealing-sort(temps1, reps1", t, "annealing1.csv");
+    }
+
+    create_empty_timings_file("annealing2.csv");
+    for(int n = 10; n <= 1000000; n *= 10)
+    {
+        t = time_annealing_sort(n, 3, temps2, repetitions2);
+        add_timings_to_file("annealing-sort(temps2, reps2", t, "annealing2.csv");
+    }
+
+    create_empty_timings_file("annealing3.csv");
+    for(int n = 10; n <= 1000000; n *= 10)
+    {
+        t = time_annealing_sort(n, 3, temps3, repetitions3);
+        add_timings_to_file("annealing-sort(temps3, reps3", t, "annealing3.csv");
+    }
+
+    create_empty_timings_file("annealing4.csv");
+    for(int n = 10; n <= 1000000; n *= 10)
+    {
+        t = time_annealing_sort(n, 3, temps4, repetitions4);
+        add_timings_to_file("annealing-sort(temps4, reps4", t, "annealing4.csv");
+    }
+
+    create_empty_timings_file("annealing5.csv");
+    for(int n = 10; n <= 1000000; n *= 10)
+    {
+        t = time_annealing_sort(n, 3, temps5, repetitions5);
+        add_timings_to_file("annealing-sort(temps5, reps5", t, "annealing5.csv");
+    }
+
+    create_empty_timings_file("annealing6.csv");
+    for(int n = 10; n <= 1000000; n *= 10)
+    {
+        t = time_annealing_sort(n, 3, temps6, repetitions6);
+        add_timings_to_file("annealing-sort(temps6, reps6", t, "annealing6.csv");
     }
 
     create_empty_timings_file("insertion.csv");
@@ -167,24 +249,9 @@ int main()
     }
 
     create_empty_timings_file("spin.csv");
-    for(int n = 10; n <= 100000; n *= 10)
+    for(int n = 10; n <= 10000; n *= 10)
     {
         t = time_sort(n, 3, spin_the_bottle_sort);
         add_timings_to_file("spin-the-bottle-sort", t, "spin.csv");
     }
-
-    // TODO:
-    // create_empty_timings_file("annealing1.csv");
-    // for(int n = 10; n <= 10000; n *= 10)
-    // {
-    //     t = time_annealing_sort(n, 3, temps1, repetitions1);
-    //     add_timings_to_file("annealing-sort(temps1, reps1", t, "annealing1.csv");
-    // }
-
-    // create_empty_timings_file("annealing2.csv");
-    // for(int n = 10; n <= 10000; n *= 10)
-    // {
-    //     t = time_annealing_sort(n, 3, temps2, repetitions2);
-    //     add_timings_to_file("annealing-sort(temps2, reps2", t, "annealing2.csv");
-    // }
 }

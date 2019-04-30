@@ -1,7 +1,7 @@
 funcname,n,seconds
 annealing-sort(temps2, reps2,10,3.46667e-05
-annealing-sort(temps2, reps2,100,0.000198667
-annealing-sort(temps2, reps2,1000,0.00181433
-annealing-sort(temps2, reps2,10000,0.0192847
-annealing-sort(temps2, reps2,100000,0.19559
-annealing-sort(temps2, reps2,1000000,1.96319
+annealing-sort(temps2, reps2,100,0.000206667
+annealing-sort(temps2, reps2,1000,0.001763
+annealing-sort(temps2, reps2,10000,0.017068
+annealing-sort(temps2, reps2,100000,0.17074
+annealing-sort(temps2, reps2,1000000,1.71256

@@ -1,6 +1,6 @@
 funcname,n,seconds
-bubble-sort,10,2e-06
-bubble-sort,100,6.46667e-05
-bubble-sort,1000,0.00634133
-bubble-sort,10000,0.714773
-bubble-sort,100000,73.9313
+bubble-sort,10,1e-06
+bubble-sort,100,3.63333e-05
+bubble-sort,1000,0.00326433
+bubble-sort,10000,0.31866
+bubble-sort,100000,31.8168

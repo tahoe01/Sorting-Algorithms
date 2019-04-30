@@ -185,7 +185,7 @@ For annealing sort, it is tested over the following temparature and repetition s
 
 * Annealing 3 (Temp 3: [1024, 512, 216, 128, 64, 32, 16, 8, 4, 2, 1, 0], Rep 3: [7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 0])
 
-* Annealing 4 (Temp 4: [929, 243, 81, 27, 9, 3, 0], Rep 4: [2, 2, 2, 2, 2, 2, 0])
+* Annealing 4 (Temp 4: [243, 81, 27, 9, 3, 0], Rep 4: [2, 2, 2, 2, 2, 0])
 
 * Annealing 5 (Temp 5: [256, 64, 16, 4, 0], Rep 5: [5, 5, 5, 5, 0])
 
@@ -219,7 +219,7 @@ In this section, the input testing data is permuted using uniformly distributed 
 
     The best two cases of annealing sort are: annealing 2 (orange line) and annealing 4 (red line). The lines of these two different parameters almost overlapped. Annealing 4 is a little bit better than annealing 2.
 
-    Annealing 4 has temparature sequence: [929, 243, 81, 27, 9, 3, 0] and reqetition sequence: [2, 2, 2, 2, 2, 2, 0]
+    Annealing 4 has temparature sequence: [243, 81, 27, 9, 3, 0] and reqetition sequence: [2, 2, 2, 2, 2, 0]
 
 ### Almost-sorted permutations
 

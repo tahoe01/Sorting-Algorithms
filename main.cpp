@@ -140,7 +140,7 @@ int main()
     const vector<int>& temps1{1600, 800, 400, 200, 100, 50, 25, 0};
     const vector<int>& temps2{1000, 800, 600, 400, 200, 0};
     const vector<int>& temps3{1024, 512, 216, 128, 64, 32, 16, 8, 4, 2, 1, 0};
-    const vector<int>& temps4{929, 243, 81, 27, 9, 3, 0};
+    const vector<int>& temps4{243, 81, 27, 9, 3, 0};
     const vector<int>& temps5{256, 64, 16, 4, 0};
     const vector<int>& temps6{1000, 850, 700, 550, 400, 250, 0};
     const vector<int>& repetitions1{5, 5, 5, 5, 5, 5, 5, 0};

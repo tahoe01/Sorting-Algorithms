@@ -14,7 +14,7 @@ def plot_timings_from_file(fname_list):
         x = n
         y = seconds
         plt.loglog(x=x, y=y, basex=2, basey=2)
-        plt.plot(x, y, label=fname)
+        plt.plot(x, y, label=fname.rstrip(".csv"))
 
 
     plt.xlabel('# of elements')
@@ -22,7 +22,7 @@ def plot_timings_from_file(fname_list):
     plt.title('Performance of sort')
     plt.legend()
     plt.show()
-    #plt.savefig('run.png')
+    # plt.savefig('uniform-shell.png')
     plt.close()
 
-plot_timings_from_file(["bubble.csv", "insertion.csv", "shell1.csv", "shell2.csv", "annealing1.csv"])
+plot_timings_from_file(["bubble.csv", "insertion.csv", "spin.csv", "shell1.csv", "shell2.csv", "annealing2.csv", "annealing4.csv"])

@@ -161,8 +161,74 @@ Regression analysis will also be performed on the results of running time experi
 
 ## **Testing Results**
 
+Testing results of different sorting algorithms will be shown for the following distribution. **Note** that shell sort and annealing sort are tested over different parameters.
+
+For shell sort, it is tested using the following gap sequences.
+
+* Shell 1 (Gap 1): [1601, 801, 300, 132, 57, 10, 1]
+
+* Shell 2 (Gap 2): [600, 280, 75, 25, 8, 1]
+
+* Shell 3 (Gap 3): [148, 99, 50, 1]
+
+* Shell 4 (Gap 4): [256, 128, 64, 32, 16, 8, 4, 2, 1]
+
+* Shell 5 (Gap 5): [200, 190, 180, 170, 160, 150]
+
+* Shell 6 (Gap 6): [887, 510, 377, 233, 144, 89, 55, 34, 21, 13, 8, 5, 3, 2, 2, 1]
+
+For annealing sort, it is tested over the following temparature and repetition sequences.
+
+* Annealing 1 (Temp 1: [1600, 800, 400, 200, 100, 50, 25, 0], Rep 1: [5, 5, 5, 5, 5, 5, 5, 0])
+
+* Annealing 2 (Temp 2: [1000, 800, 600, 400, 200, 0], Rep 2: [2, 2, 2, 2, 2, 0])
+
+* Annealing 3 (Temp 3: [1024, 512, 216, 128, 64, 32, 16, 8, 4, 2, 1, 0], Rep 3: [7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 0])
+
+* Annealing 4 (Temp 4: [929, 243, 81, 27, 9, 3, 0], Rep 4: [2, 2, 2, 2, 2, 2, 0])
+
+* Annealing 5 (Temp 5: [256, 64, 16, 4, 0], Rep 5: [5, 5, 5, 5, 0])
+
+* Annealing 6: (Temp 6: [1000, 850, 700, 550, 400, 250, 0], Rep 6: [3, 3, 3, 3, 3, 3, 0])
+
 ### Uniformly distributed permutations
+
+In this section, the input testing data is permuted using uniformly distributed permutation.
+
+1. The graph below shows the running time of different algorithms on increasing problem size. For shell sort and annealing sort, only the best two cases are shown in this graph.
+
+    ![uniform sort](./uniform-sort.png)
+
+    Among all the sorting algorithms tested, annealing 4 is the fastest.
+
+2. Perform regression analysis of the running time experiements. For shell sort and annealing sort, only the best two cases are shown in this graph.
+
+    ![uniform regression](./uniform-regression.png)
+
+    Regression analysis also shows annealing 4 has the smallest slope on log-log scale which means it is the fastest.
+
+3. The following graph shows the running time of shell sort over all different gap sequences above:
+
+    ![shell sort](./uniform-shell.png)
+
+    The best two cases of shell sort are: shell 1 and shell 2. And shell 1 is even faster than shell 2. Overall, gap sequence: [1601, 801, 300, 132, 57, 10, 1] has the best performance.
+
+4. The following graph shows the running time of annealing sort over all different temparature sequences and repetition sequences above:
+
+    ![shell sort](./uniform-annealing.png)
+
+    The best two cases of annealing sort are: annealing 2 (orange line) and annealing 4 (red line). The lines of these two different parameters almost overlapped. Annealing 4 is a little bit better than annealing 2.
+
+    Annealing 4 has temparature sequence: [929, 243, 81, 27, 9, 3, 0] and reqetition sequence: [2, 2, 2, 2, 2, 2, 0]
 
 ### Almost-sorted permutations
 
-## **Conclusion**
+In this section, the input testing data is almost sorted by independently choosing 2logn pairs, (i, j), where i and j are uniformly-chosen random integers in the range from 0 to n-1, and swap the numbers at positions i and j in the array/vector.
+
+1. The graph below shows the running time of different algorithms on increasing problem size.
+
+2. Regression analysis of the running time experiements
+
+3. The following graph shows the running time of shell sort over all different gap sequences:
+
+4. The following graph shows the running time of annealing sort over all different temparature sequences and repetition sequences:

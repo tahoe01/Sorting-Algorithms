@@ -30,7 +30,7 @@ def linear_regression():
         m, b = get_regression_line_coefficients(n, seconds)       
         plt.plot(x, m*x + b, label=f'{fname.rstrip(".csv")}: y ~ {round(m, 2)}x + {round(b, 2)}')
     
-    file_list = ["bubble.csv", "insertion.csv", "spin.csv", "shell1.csv", "shell2.csv", "annealing2.csv", "annealing4.csv"]
+    file_list = ["bubble.csv", "insertion.csv", "spin.csv", "shell5.csv", "shell3.csv", "annealing2.csv", "annealing6.csv"]
     
     # Plot graph
     plt.subplot(2, 1, 1)

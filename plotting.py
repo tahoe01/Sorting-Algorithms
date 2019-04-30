@@ -25,4 +25,4 @@ def plot_timings_from_file(fname_list):
     # plt.savefig('uniform-shell.png')
     plt.close()
 
-plot_timings_from_file(["bubble.csv", "insertion.csv", "spin.csv", "shell1.csv", "shell2.csv", "annealing2.csv", "annealing4.csv"])
+plot_timings_from_file(["bubble.csv", "insertion.csv", "spin.csv", "shell5.csv", "shell3.csv", "annealing2.csv", "annealing6.csv"])

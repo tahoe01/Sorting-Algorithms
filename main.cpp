@@ -26,8 +26,8 @@ vector<int> get_random_shuffled_int_vector(int n)
     vector<int> vec = vector<int>(n);
     for(int i = 0; i < n; i++)
         vec[i] = (i + 1);
-    // shuffle_vector(vec);
-    almost_sorted_vector(vec); // Use this line to generate almost sorted array
+    shuffle_vector(vec);
+    // almost_sorted_vector(vec); // Use this line to generate almost sorted array
     return vec;
 }
 
@@ -40,7 +40,7 @@ timing time_sort(int n, int reps, function<void(vector<int>&)> sort_algorithm)
     {
         rvec = get_random_shuffled_int_vector(n);
         double min_timing = DBL_MAX;
-        for (int j = 0; j < 1; j++) { // For each input vector, do 3 runs and take the smallest timing.
+        for (int j = 0; j < 3; j++) { // For each input vector, do 3 runs and take the smallest timing.
             clock_t c_start = clock();
             sort_algorithm(rvec);
             clock_t c_end = clock();
@@ -66,7 +66,7 @@ timing time_shell_sort(int n, int reps, const std::vector<int>& gaps)
     {
         rvec = get_random_shuffled_int_vector(n);
         double min_timing = DBL_MAX;
-        for (int j = 0; j < 1; j++) { // For each input vector, do 3 runs and take the smallest timing.
+        for (int j = 0; j < 3; j++) { // For each input vector, do 3 runs and take the smallest timing.
             clock_t c_start = clock();
             shell_sort(rvec, gaps);
             clock_t c_end = clock();
@@ -92,7 +92,7 @@ timing time_annealing_sort(int n, int reps, const std::vector<int>& temps, const
     {
         rvec = get_random_shuffled_int_vector(n);
         double min_timing = DBL_MAX;
-        for (int j = 0; j < 1; j++) { // For each input vector, do 3 runs and take the smallest timing.
+        for (int j = 0; j < 3; j++) { // For each input vector, do 3 runs and take the smallest timing.
             clock_t c_start = clock();
             annealing_sort(rvec, temps, repetitions);
             clock_t c_end = clock();

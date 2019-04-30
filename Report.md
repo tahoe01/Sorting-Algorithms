@@ -99,7 +99,7 @@ void spin_the_bottle_sort(std::vector<int>& nums) {
                 swap_element(nums[i], nums[s]);
             }
         }
-    } 
+    }
 }
 ```
 
@@ -129,6 +129,7 @@ void shell_sort(std::vector<int>& nums, const std::vector<int>& gaps) {
 ```
 
 ### Annealing sort
+
 Inspired by simulated annealing meta-heuristic, which involves solving a problem by a sequence of choices from the nubmer of r_j neighbors and T_j distance.
 
 Pseudocode:
@@ -185,7 +186,7 @@ For annealing sort, it is tested over the following temparature and repetition s
 
 * Annealing 3 (Temp 3: [1024, 512, 216, 128, 64, 32, 16, 8, 4, 2, 1, 0], Rep 3: [7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 7, 0])
 
-* Annealing 4 (Temp 4: [243, 81, 27, 9, 3, 0], Rep 4: [2, 2, 2, 2, 2, 0])
+* Annealing 4 (Temp 4: [1597, 987, 610, 377, 233, 144, 89, 55, 34, 21, 13, 8, 5, 3, 2, 1], Rep 4: [2, 2, 2, 2, 2, 2, 2, 2,2, 2, 2, 2, 2, 2, 2, 0])
 
 * Annealing 5 (Temp 5: [256, 64, 16, 4, 0], Rep 5: [5, 5, 5, 5, 0])
 
@@ -215,11 +216,11 @@ In this section, the input testing data is permuted using uniformly distributed 
 
 4. The following graph shows the running time of annealing sort over all different temparature sequences and repetition sequences above:
 
-    ![shell sort](./uniform-annealing.png)
+    ![annealing sort](./uniform-annealing.png)
 
     The best two cases of annealing sort are: annealing 2 (orange line) and annealing 4 (red line). The lines of these two different parameters almost overlapped. Annealing 4 is a little bit better than annealing 2.
 
-    Annealing 4 has temparature sequence: [243, 81, 27, 9, 3, 0] and reqetition sequence: [2, 2, 2, 2, 2, 0]
+    Annealing 4 has temparature sequence: [1597, 987, 610, 377, 233, 144, 89, 55, 34, 21, 13, 8, 5, 3, 2, 1] and reqetition sequence: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0]
 
 ### Almost-sorted permutations
 
@@ -227,8 +228,31 @@ In this section, the input testing data is almost sorted by independently choosi
 
 1. The graph below shows the running time of different algorithms on increasing problem size.
 
+    ![almost sort](./almost-sort.png)
+
+    Among all the sorting algorithms tested, insertion sort is the fastest.
+
 2. Regression analysis of the running time experiements
+
+    ![almost regression](./almost-regression.png)
+
+    Regression analysis also shows insertion sort has the smallest slope on log-log scale which means it is the fastest.
 
 3. The following graph shows the running time of shell sort over all different gap sequences:
 
+    ![shell sort](./almost-shell.png)
+
+    The best two cases of shell sort are: shell 3 and shell 5. And shell 5 is even faster than shell 3. Overall, gap sequence: [200, 190, 180, 170, 160, 150] has the best performance.
+
 4. The following graph shows the running time of annealing sort over all different temparature sequences and repetition sequences:
+
+    ![annealing sort](./almost-annealing.png)
+
+    The best two cases of annealing sort are: annealing 2 and annealing 6.
+    Annealing 2 has a faster run time than annealing 6.
+
+    Annealing 2 has temparature sequence: [1000, 800, 600, 400, 200, 0] and reqetition sequence: [2, 2, 2, 2, 2, 0]
+
+## Conclusion
+
+Overall, annealing sort 4 is the fastest when input testing data is in uniformly distributed permutations. And insertion sort is the fastest when input testing data in almost-sorted permutations.

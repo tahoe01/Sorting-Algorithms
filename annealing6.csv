@@ -1,0 +1,7 @@
+funcname,n,seconds
+annealing-sort(temps6, reps6,10,0
+annealing-sort(temps6, reps6,100,0
+annealing-sort(temps6, reps6,1000,0.00666667
+annealing-sort(temps6, reps6,10000,0.05
+annealing-sort(temps6, reps6,100000,0.513333
+annealing-sort(temps6, reps6,1000000,5.10333

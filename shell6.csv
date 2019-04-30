@@ -1,0 +1,7 @@
+funcname,n,seconds
+shell-sort(gaps6),10,0
+shell-sort(gaps6),100,0
+shell-sort(gaps6),1000,0.00333333
+shell-sort(gaps6),10000,0.00333333
+shell-sort(gaps6),100000,0.133333
+shell-sort(gaps6),1000000,6.85333

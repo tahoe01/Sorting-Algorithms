@@ -200,13 +200,13 @@ In this section, the input testing data is permuted using uniformly distributed 
 
     ![uniform sort](./uniform-sort.png)
 
-    Among all the sorting algorithms tested, annealing 4 is the fastest.
+    Among all the sorting algorithms tested, annealing 2 is the fastest.
 
 2. Perform regression analysis of the running time experiements. For shell sort and annealing sort, only the best two cases are shown in this graph.
 
     ![uniform regression](./uniform-regression.png)
 
-    Regression analysis also shows annealing 4 has the smallest slope on log-log scale which means it is the fastest.
+    Regression analysis also shows annealing 2 has the smallest slope on log-log scale which means it is the fastest.
 
 3. The following graph shows the running time of shell sort over all different gap sequences above:
 
@@ -218,9 +218,9 @@ In this section, the input testing data is permuted using uniformly distributed 
 
     ![annealing sort](./uniform-annealing.png)
 
-    The best two cases of annealing sort are: annealing 2 (orange line) and annealing 4 (red line). The lines of these two different parameters almost overlapped. Annealing 4 is a little bit better than annealing 2.
+    The best two cases of annealing sort are: annealing 2 (orange line) and annealing 4 (red line). The lines of these two different parameters almost overlapped. Annealing 2 is a little bit better than annealing 4.
 
-    Annealing 4 has temparature sequence: [1597, 987, 610, 377, 233, 144, 89, 55, 34, 21, 13, 8, 5, 3, 2, 1] and reqetition sequence: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0]
+    Annealing 2 has temparature sequence: [1000, 800, 600, 400, 200, 0] and reqetition sequence: [2, 2, 2, 2, 2, 0]
 
 ### Almost-sorted permutations
 
@@ -255,4 +255,4 @@ In this section, the input testing data is almost sorted by independently choosi
 
 ## Conclusion
 
-Overall, annealing sort 4 is the fastest when input testing data is in uniformly distributed permutations, because annealing sort 4 has the fastest running time over 1000,000 elements and smallest slope in regression analysis. And insertion sort is the fastest when input testing data in almost-sorted permutations, because insertion sort has the fastest running time and smallest slope. In almost-sorted distribution, insertion needs much less swap operation than other algorithms.
+Overall, annealing sort 2 is the fastest when input testing data is in uniformly distributed permutations, because annealing sort 2 has the fastest running time over 1000,000 elements and smallest slope in regression analysis. And insertion sort is the fastest when input testing data in almost-sorted permutations, because insertion sort has the fastest running time and smallest slope. In almost-sorted distribution, insertion needs much less swap operation than other algorithms.

@@ -84,7 +84,7 @@ void insertion_sort(std::vector<int>& nums) {
 ### Spin the bottle sort
 
 Spin the bottle sort repeated scan the list untit the list is sorted. In each iteration, it uniformly chooses an element and performs swap operation with current scanned element if needed.
-
+Best case complexity: `Omega(N^2 LogN)`.
 C++ code:
 
 ```c++
@@ -107,7 +107,7 @@ void spin_the_bottle_sort(std::vector<int>& nums) {
 
 Based on the fact that insertion sort has linear run time if the input is already sorted, shell sort orders the list by comparing elements that are separated by decreasing gap numbers. A gap sequence that contains 1 can ensure the this algorithm is correct.
 
-When testing this algorithm, some different gap sequences will be used to find which two gap sequences are the best two. All of the gap sequences running time of different size will be plotted in one graph. In this way, the best two sequences that has the fastest asymptotic running time can be found.
+When testing this algorithm, some different gap sequences will be used to find which two gap sequences are the best two. All of the gap sequences running time of different size will be plotted in one graph. In this way, the best two sequences that has the fastest asymptotic running time can be found. Worst case complexity: `O(N(logN)^2)`
 
 C++ code:
 
@@ -130,7 +130,7 @@ void shell_sort(std::vector<int>& nums, const std::vector<int>& gaps) {
 
 ### Annealing sort
 
-Inspired by simulated annealing meta-heuristic, which involves solving a problem by a sequence of choices from the nubmer of r_j neighbors and T_j distance.
+Inspired by simulated annealing meta-heuristic, which involves solving a problem by a sequence of choices from the nubmer of r_j neighbors and T_j distance. Complexity: `O(NlogN)`.
 
 Pseudocode:
 
@@ -255,4 +255,4 @@ In this section, the input testing data is almost sorted by independently choosi
 
 ## Conclusion
 
-Overall, annealing sort 4 is the fastest when input testing data is in uniformly distributed permutations. And insertion sort is the fastest when input testing data in almost-sorted permutations.
+Overall, annealing sort 4 is the fastest when input testing data is in uniformly distributed permutations, because annealing sort 4 has the fastest running time over 1000,000 elements and smallest slope in regression analysis. And insertion sort is the fastest when input testing data in almost-sorted permutations, because insertion sort has the fastest running time and smallest slope. In almost-sorted distribution, insertion needs much less swap operation than other algorithms.

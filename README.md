@@ -1,4 +1,4 @@
-# Project 1: Testing Running Times
+Testing Sorting Algorithm Running Times
 
 ## **Overview**
 

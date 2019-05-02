@@ -1,4 +1,4 @@
-# Testing Sorting Algorithm Running Times
+# Testing Sorting Algorithms Running Times
 
 ## **Overview**
 
